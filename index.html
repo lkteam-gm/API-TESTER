@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="API Tester by LK-TEAM — A professional, responsive API testing tool hosted on GitHub Pages." />
+  <meta name="theme-color" content="#0f1117" />
+  <title>API Tester — LK-TEAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="26" height="26" rx="7" stroke="url(#grad1)" stroke-width="2"/>
+            <path d="M8 14h4M16 14h4M14 8v4M14 16v4" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="14" cy="14" r="2.5" fill="url(#grad1)"/>
+            <defs>
+              <linearGradient id="grad1" x1="1" y1="1" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6C63FF"/>
+                <stop offset="1" stop-color="#3BC4F2"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">API Tester</span>
+          <span class="brand-team">by LK-TEAM</span>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn-icon" aria-label="Toggle theme" title="Toggle dark / light theme">
+          <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button id="clearAll" class="btn-icon" aria-label="Clear all fields" title="Clear all fields">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════ MAIN ═══════════════════════ -->
+  <main class="app-main">
+
+    <!-- ────────── REQUEST PANEL ────────── -->
+    <section class="panel request-panel" id="requestPanel">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Request
+        </h2>
+        <div class="method-badge" id="methodBadge">GET</div>
+      </div>
+
+      <!-- URL Bar -->
+      <div class="url-bar">
+        <div class="method-select-wrap">
+          <select id="methodSelect" class="method-select" aria-label="HTTP Method">
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="PATCH">PATCH</option>
+            <option value="DELETE">DELETE</option>
+            <option value="HEAD">HEAD</option>
+            <option value="OPTIONS">OPTIONS</option>
+          </select>
+          <svg class="select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <input
+          type="url"
+          id="urlInput"
+          class="url-input"
+          placeholder="https://api.example.com/endpoint"
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Endpoint URL"
+        />
+        <button id="sendBtn" class="btn-send" aria-label="Send request">
+          <span class="btn-send-text">Send</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <span class="btn-loader" id="btnLoader" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tab-bar" role="tablist" aria-label="Request configuration tabs">
+        <button class="tab-btn active" data-tab="headers" role="tab" aria-selected="true" id="tab-headers">Headers</button>
+        <button class="tab-btn" data-tab="body" role="tab" aria-selected="false" id="tab-body">Body</button>
+        <button class="tab-btn" data-tab="params" role="tab" aria-selected="false" id="tab-params">Params</button>
+        <button class="tab-btn" data-tab="auth" role="tab" aria-selected="false" id="tab-auth">Auth</button>
+      </div>
+
+      <!-- Tab: Headers -->
+      <div class="tab-content active" id="tab-content-headers" role="tabpanel" aria-labelledby="tab-headers">
+        <div class="kv-section">
+          <div class="kv-list" id="headersList">
+            <div class="kv-row" data-row="0">
+              <input type="text" class="kv-key" placeholder="Header name" spellcheck="false" />
+              <input type="text" class="kv-val" placeholder="Value" spellcheck="false" />
+              <button class="kv-remove" aria-label="Remove header">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+          <button class="btn-add-row" id="addHeader">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Header
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab: Body -->
+      <div class="tab-content" id="tab-content-body" role="tabpanel" aria-labelledby="tab-body">
+        <div class="body-section">
+          <div class="body-type-bar">
+            <label class="radio-pill">
+              <input type="radio" name="bodyType" value="none" checked /> <span>None</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="bodyType" value="json" /> <span>JSON</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="bodyType" value="form" /> <span>Form</span>
+            </label>
+            <label class="radio-pill">
+              <input type="radio" name="bodyType" value="text" /> <span>Text</span>
+            </label>
+          </div>
+          <div id="bodyContent"></div>
+        </div>
+      </div>
+
+      <!-- Tab: Params -->
+      <div class="tab-content" id="tab-content-params" role="tabpanel" aria-labelledby="tab-params">
+        <div class="kv-section">
+          <div class="kv-list" id="paramsList">
+            <div class="kv-row" data-row="0">
+              <input type="text" class="kv-key" placeholder="Parameter name" spellcheck="false" />
+              <input type="text" class="kv-val" placeholder="Value" spellcheck="false" />
+              <button class="kv-remove" aria-label="Remove param">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+          </div>
+          <button class="btn-add-row" id="addParam">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Param
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab: Auth -->
+      <div class="tab-content" id="tab-content-auth" role="tabpanel" aria-labelledby="tab-auth">
+        <div class="auth-section">
+          <div class="field-group">
+            <label class="field-label" for="authType">Auth Type</label>
+            <div class="select-wrap">
+              <select id="authType" class="field-select">
+                <option value="none">No Auth</option>
+                <option value="bearer">Bearer Token</option>
+                <option value="basic">Basic Auth</option>
+                <option value="apikey">API Key</option>
+              </select>
+              <svg class="select-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div id="authFields"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────── RESPONSE PANEL ────────── -->
+    <section class="panel response-panel" id="responsePanel">
+      <div class="panel-header">
+        <h2 class="panel-title">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          Response
+        </h2>
+        <div class="response-meta" id="responseMeta"></div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <p class="empty-title">No response yet</p>
+        <p class="empty-sub">Configure your request above and hit <strong>Send</strong></p>
+      </div>
+
+      <!-- Response content (hidden until request is made) -->
+      <div class="response-content" id="responseContent" style="display:none;">
+
+        <!-- Status bar -->
+        <div class="status-bar" id="statusBar"></div>
+
+        <!-- Response Tabs -->
+        <div class="tab-bar" role="tablist" aria-label="Response tabs">
+          <button class="tab-btn active" data-rtab="body" role="tab" aria-selected="true" id="rtab-body">Body</button>
+          <button class="tab-btn" data-rtab="headers" role="tab" aria-selected="false" id="rtab-headers">Headers</button>
+        </div>
+
+        <!-- Response Body -->
+        <div class="tab-content active rtab-content" id="rtab-content-body" role="tabpanel">
+          <div class="response-toolbar">
+            <div class="view-toggle" role="group" aria-label="View format">
+              <button class="view-btn active" data-view="pretty" id="viewPretty">Pretty</button>
+              <button class="view-btn" data-view="raw" id="viewRaw">Raw</button>
+            </div>
+            <button class="btn-copy" id="copyBody" title="Copy to clipboard">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span>Copy</span>
+            </button>
+          </div>
+          <pre class="response-body" id="responseBody"><code id="responseCode"></code></pre>
+        </div>
+
+        <!-- Response Headers -->
+        <div class="tab-content rtab-content" id="rtab-content-headers" role="tabpanel" style="display:none;">
+          <div class="response-headers-list" id="responseHeadersList"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <span class="footer-copy">Made with <span class="heart">♥</span> by <strong>LK-TEAM</strong></span>
+      <span class="footer-sep">·</span>
+      <span class="footer-version">v1.0.0</span>
+      <span class="footer-sep">·</span>
+      <a href="https://github.com" target="_blank" rel="noopener" class="footer-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.268 2.75 1.026A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.748-1.026 2.748-1.026.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
