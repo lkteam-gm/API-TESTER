@@ -902,9 +902,44 @@ body {
 @media (max-width: 560px) {
   .header-inner { height: 52px; padding: 0 14px; }
   .brand-team { display: none; }
-  .url-bar { padding: 10px 10px; gap: 0; flex-wrap: nowrap; }
-  .btn-send { padding: 0 12px; }
-  .btn-send-text { display: none; }
+
+  /* URL bar: method+url on top row, Send button full-width below */
+  .url-bar {
+    padding: 10px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .method-select-wrap {
+    flex-shrink: 0;
+  }
+
+  /* Method select keeps its left-rounded corner */
+  .method-select {
+    border-radius: var(--radius-md);
+    border-right: 1px solid var(--border);
+  }
+
+  /* URL input fills the remaining space on the first row and gets full rounding */
+  .url-input {
+    flex: 1;
+    min-width: 0;
+    border-radius: var(--radius-md);
+  }
+
+  /* Send button drops to its own full-width second row */
+  .btn-send {
+    width: 100%;
+    border-radius: var(--radius-md);
+    justify-content: center;
+    padding: 0 18px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+
+  /* Always show the "Send" text — never hide it */
+  .btn-send-text { display: inline; }
+
   .app-main { padding: 10px 10px 16px; gap: 14px; }
   .kv-row { grid-template-columns: 1fr 1fr 28px; }
   .panel { border-radius: var(--radius-lg); }
