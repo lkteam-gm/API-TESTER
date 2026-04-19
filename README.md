@@ -22,7 +22,7 @@ Test REST endpoints instantly — no backend, no installation, no account requir
 
 No Node.js. No build step. No server. Just open `index.html` and go.
 
-> 🌐 **Live Demo:** [Hosted on GitHub Pages](#)  *(replace with your Pages URL)*
+> 🌐 **Live Demo:** [Hosted on GitHub Pages](#) *https://lkteam-gm.github.io/API-TESTER/*
 
 ---
 
@@ -48,16 +48,7 @@ No Node.js. No build step. No server. Just open `index.html` and go.
 ---
 
 ## 🖼️ Screenshots
-
-> *Add screenshots here after deploying. Example:*
-
-| Dark Mode | Light Mode |
-|:---:|:---:|
-| ![Dark Mode](screenshots/dark.png) | ![Light Mode](screenshots/light.png) |
-
-| Mobile View | Response Panel |
-|:---:|:---:|
-| ![Mobile](screenshots/mobile.png) | ![Response](screenshots/response.png) |
+#NULL
 
 ---
 
