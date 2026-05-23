@@ -7,7 +7,15 @@
 /* ─────────────────────────────────────────
    DOM References
 ───────────────────────────────────────── */
-const $ = id => document.getElementById(id);
+const $ = (() => {
+  const cache = new Map();
+  return id => {
+    if (!cache.has(id)) {
+      cache.set(id, document.getElementById(id));
+    }
+    return cache.get(id);
+  };
+})();
 
 const themeToggle   = $('themeToggle');
 const iconMoon      = $('iconMoon');
@@ -122,17 +130,19 @@ rTabBtns.forEach(btn => {
 /* ─────────────────────────────────────────
    KV Rows (Headers / Params)
 ───────────────────────────────────────── */
+const kvRowTemplate = `
+  <input type="text" class="kv-key" placeholder="Key" spellcheck="false" />
+  <input type="text" class="kv-val" placeholder="Value" spellcheck="false" />
+  <button class="kv-remove" aria-label="Remove row">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>`;
+
 function makeKvRow() {
   const row = document.createElement('div');
   row.className = 'kv-row';
-  row.innerHTML = `
-    <input type="text" class="kv-key" placeholder="Key" spellcheck="false" />
-    <input type="text" class="kv-val" placeholder="Value" spellcheck="false" />
-    <button class="kv-remove" aria-label="Remove row">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>`;
+  row.innerHTML = kvRowTemplate;
   row.querySelector('.kv-remove').addEventListener('click', () => {
     row.style.opacity = '0';
     row.style.transform = 'translateX(12px)';
@@ -141,17 +151,6 @@ function makeKvRow() {
   });
   return row;
 }
-
-// Setup existing remove buttons
-document.querySelectorAll('.kv-remove').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const row = btn.closest('.kv-row');
-    row.style.opacity = '0';
-    row.style.transform = 'translateX(12px)';
-    row.style.transition = 'all 0.18s ease';
-    setTimeout(() => row.remove(), 180);
-  });
-});
 
 addHeaderBtn.addEventListener('click', () => headersList.appendChild(makeKvRow()));
 addParamBtn.addEventListener('click',  () => paramsList.appendChild(makeKvRow()));
@@ -337,9 +336,16 @@ function buildBody() {
 /* ─────────────────────────────────────────
    JSON Syntax Highlighting
 ───────────────────────────────────────── */
+const JSON_REGEX = /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?|[{}[\],:])/g;
+
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
 function highlightJSON(raw) {
   try {
-    // Validate it's JSON
     JSON.parse(raw);
   } catch {
     return escapeHtml(raw);
@@ -349,25 +355,16 @@ function highlightJSON(raw) {
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(
-      /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?|[{}\[\],:])/g,
-      match => {
-        if (/^"/.test(match)) {
-          if (/:$/.test(match)) return `<span class="json-key">${match}</span>`;
-          return `<span class="json-str">${match}</span>`;
-        }
-        if (/true|false/.test(match)) return `<span class="json-bool">${match}</span>`;
-        if (/null/.test(match))       return `<span class="json-null">${match}</span>`;
-        if (/[{}\[\],:]/.test(match)) return `<span class="json-punct">${match}</span>`;
-        return `<span class="json-num">${match}</span>`;
+    .replace(JSON_REGEX, match => {
+      if (/^"/.test(match)) {
+        if (/:$/.test(match)) return `<span class="json-key">${match}</span>`;
+        return `<span class="json-str">${match}</span>`;
       }
-    );
-}
-
-function escapeHtml(str) {
-  return str
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      if (/true|false/.test(match)) return `<span class="json-bool">${match}</span>`;
+      if (/null/.test(match))       return `<span class="json-null">${match}</span>`;
+      if (/[{}[\],:]/.test(match)) return `<span class="json-punct">${match}</span>`;
+      return `<span class="json-num">${match}</span>`;
+    });
 }
 
 function prettyPrint(text, contentType) {
@@ -584,8 +581,8 @@ function showToast(msg) {
    Init: setup existing rows
 ───────────────────────────────────────── */
 document.querySelectorAll('.kv-remove').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const row = btn.closest('.kv-row');
+  btn.addEventListener('click', function() {
+    const row = this.closest('.kv-row');
     if (!row) return;
     row.style.opacity    = '0';
     row.style.transform  = 'translateX(12px)';
