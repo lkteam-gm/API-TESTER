@@ -1,0 +1,855 @@
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
+dist/
+build/
+target/
+
+# Dependencies
+node_modules/
+venv/
+.venv/
+.env
+.env.local
+.env.*
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Compressed files
+*.zip
+*.gz
+*.tar
+*.tgz
+*.bz2
+*.xz
+*.7z
+*.rar
+*.zst
+*.lz4
+*.lzh
+*.cab
+*.arj
+*.rpm
+*.deb
+*.Z
+*.lz
+*.lzo
+*.tar.gz
+*.tar.bz2
+*.tar.xz
+*.tar.zst
+
+# Gradle
+.gradle/
+
+# Python specific
+*.pyo
+*.pyd
+*.egg-info/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# JavaScript/Node.js specific
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+jspm_packages/
+web_modules/
+
+# Java specific
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# C/C++ specific
+*.i
+*.ii
+*.s
+*.su
+*.lo
+
+# Ruby specific
+*.gem
+*.rbc
+.bundle/
+.rbenv-gemsets
+.rbenv-version
+
+# Go specific
+*.out
+*.prof
+*.test
+
+# Rust specific
+*.rlib
+*.so
+*.dylib
+*.dll
+Cargo.lock
+
+# Julia specific
+julia-*/
+
+# Zig specific
+zig-out/
+zig-cache/
+
+# Temporary files
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+tramp
+.\#*
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+desktop.ini
+
+# Backup files
+*.bak
+*.orig
+*.rej
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.nib
+autosave
+*~.nib
+.nib
+*.plist
+profile
+
+# Testing
+.pytest_cache/
+.hypothesis/
+.tox/
+.coverage.*
+htmlcov/
+.coverage
+
+# Documentation
+docs/_build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.ENV
+
+# IDE specific
+.vs/
+*.swp
+*.swo
+*~
+
+# Environment specific
+.env.local
+.env.production
+.env.development
+.env.test
+
+# Build outputs
+out/
+output/
+_build/
+_site/
+
+# Package managers
+node_modules/
+bower_components/
+jspm_packages/
+web_modules/
+.npm/
+.yarn/
+.yarn-cache/
+
+# CI/CD
+.circleci/
+.github/
+.gitlab/
+
+# Database
+*.db
+*.db-journal
+
+# Cache
+.cache/
+.cargo/
+.go/
+.node-gyp/
+.npm/
+.php_cs.cache
+.rubocop-cache/
+.sass-cache/
+.scala_history
+.stylelintcache
+.tern-port
+.tmp/
+.tmp.*
+
+# Lock files
+composer.lock
+Gemfile.lock
+Pipfile.lock
+poetry.lock
+
+# Secrets
+secrets/
+secret/
+config/secrets.yml
+config/credentials.yml.enc
+
+# Uploads
+uploads/
+media/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage reports
+coverage/
+*.gcov
+*.lcov
+*.tfstate
+*.tfstate.backup
+
+# Debug
+server.log
+*.stackdump
+
+# System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+VolumeIcon.icns
+
+# Temporary
+tmp/
+temp/
+tmp*/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+tramp
+.\#*
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+desktop.ini
+
+# Generated
+generated/
+.autotools
+.autoreconf
+autom4te.cache/
+config.cache
+config.log
+Makefile.in
+aclocal.m4
+configure
+install-sh
+missing
+depcomp
+ylwrap
+libtool
+ltmain.sh
+config.status
+config.h
+config.h.in
+stamp-h1
+.libs/
+*.la
+*.lai
+*.so
+*.lo
+*.o
+*.obj
+*.a
+*.lib
+*.dylib
+*.dll
+*.so.*
+*.dll.*
+*.exe
+*.out
+*.pyc
+*.pyo
+*.pyd
+*.jar
+*.war
+*.ear
+*.class
+*.o
+*.obj
+*.ilk
+*.pdb
+*.idb
+*.res
+*.rsp
+*.aps
+*.ncb
+*.opt
+*.plg
+*.mdb
+*.ncf
+*.dep
+*.cache
+*.dot
+*.gp
+*.gpi
+*.gpt
+*.fig
+*.xcf
+*.o
+*.os
+*.oda
+*.odp
+*.ods
+*.odt
+*.otf
+*.ott
+*.oth
+*.otp
+*.ots
+*.odm
+*.odb
+*.odi
+*.oxt
+*.sxd
+*.sxg
+*.sxi
+*.sxm
+*.sxw
+*.std
+*.sti
+*.stw
+*.stm
+*.stc
+*.svo
+*.svm
+*.svi
+*.sdd
+*.sdw
+*.sdp
+*.sda
+*.sdc
+*.sdf
+*.sds
+*.sdm
+*.sdu
+*.smf
+*.sms
+*.sdd
+*.sdp
+*.sda
+*.sdc
+*.sdf
+*.sds
+*.sdm
+*.sdu
+*.smf
+*.sms
+
+# Configuration
+.config/
+.local/
+.cache/
+.tmp/
+.temp/
+
+# Archives
+*.7z
+*.rar
+*.gz
+*.tar
+*.zip
+*.bz2
+*.xz
+*.z
+*.Z
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.tar.zst
+*.tgz
+*.tbz
+*.tbz2
+*.tlz
+*.txz
+*.tZ
+*.tzst
+*.lz
+*.lzma
+*.lzo
+*.rz
+*.sfark
+*.sz
+*.zst
+*.zstd
+*.dz
+*.taz
+*.war
+*.xar
+*.sit
+*.sitx
+*.hqx
+*.cpt
+*.sea
+*.bin
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.obj
+*.o
+*.out
+*.pyc
+*.pyo
+*.pyd
+*.jar
+*.war
+*.ear
+*.class
+*.swf
+*.dmg
+*.iso
+*.img
+*.vcd
+*.vob
+*.ifo
+*.bup
+*.sub
+*.idx
+*.srt
+*.ssa
+*.ass
+*.mpl
+*.m3u
+*.m3u8
+*.pls
+*.ram
+*.rm
+*.rv
+*.smil
+*.wmv
+*.wma
+*.asf
+*.asx
+*.wax
+*.wm
+*.wvx
+*.wmx
+*.wpl
+*.mng
+*.asx
+*.asf
+*.wax
+*.wm
+*.wvx
+*.wmx
+*.wpl
+*.mp3
+*.mp4
+*.m4a
+*.m4v
+*.mov
+*.avi
+*.mkv
+*.flv
+*.webm
+*.ogv
+*.ogg
+*.oga
+*.opus
+*.wav
+*.flac
+*.aac
+*.mka
+*.3gp
+*.3g2
+*.mxf
+*.roq
+*.viv
+*.f4v
+*.f4p
+*.f4a
+*.f4b
+*.h3d
+*.h3r
+*.h3t
+*.h3s
+*.h3v
+*.h3c
+*.h3p
+*.h3m
+*.h3o
+*.h3i
+*.h3l
+*.h3n
+*.h3u
+*.h3w
+*.h3x
+*.h3y
+*.h3z
+*.h30
+*.h31
+*.h32
+*.h33
+*.h34
+*.h35
+*.h36
+*.h37
+*.h38
+*.h39
+*.h3a
+*.h3b
+*.h3c
+*.h3d
+*.h3e
+*.h3f
+*.h3g
+*.h3h
+*.h3i
+*.h3j
+*.h3k
+*.h3l
+*.h3m
+*.h3n
+*.h3o
+*.h3p
+*.h3q
+*.h3r
+*.h3s
+*.h3t
+*.h3u
+*.h3v
+*.h3w
+*.h3x
+*.h3y
+*.h3z
+*.h30
+*.h31
+*.h32
+*.h33
+*.h34
+*.h35
+*.h36
+*.h37
+*.h38
+*.h39
+*.h3a
+*.h3b
+*.h3c
+*.h3d
+*.h3e
+*.h3f
+*.h3g
+*.h3h
+*.h3i
+*.h3j
+*.h3k
+*.h3l
+*.h3m
+*.h3n
+*.h3o
+*.h3p
+*.h3q
+*.h3r
+*.h3s
+*.h3t
+*.h3u
+*.h3v
+*.h3w
+*.h3x
+*.h3y
+*.h3z
+
+# Image files (usually not ignored unless large/generated)
+# *.png
+# *.jpg
+# *.jpeg
+# *.gif
+# *.bmp
+# *.tiff
+# *.svg
+# *.ico
+# *.webp
+# *.avif
+# *.jxl
+
+# Video files (usually not ignored unless large/generated)
+# *.mp4
+# *.mov
+# *.avi
+# *.mkv
+# *.wmv
+# *.flv
+# *.webm
+# *.m4v
+# *.3gp
+# *.3g2
+# *.mxf
+# *.roq
+# *.viv
+# *.f4v
+# *.f4p
+# *.f4a
+# *.f4b
+
+# Audio files (usually not ignored unless large/generated)
+# *.mp3
+# *.wav
+# *.flac
+# *.aac
+# *.m4a
+# *.m4b
+# *.m4p
+# *.oga
+# *.ogg
+# *.opus
+# *.wma
+# *.aiff
+# *.ape
+# *.au
+# *.mid
+# *.midi
+# *.ra
+# *.ram
+# *.rm
+# *.rmi
+
+# Font files
+*.ttf
+*.woff
+*.woff2
+*.eot
+*.otf
+*.pcf
+*.pfa
+*.pfb
+*.gsf
+*.psf
+*.bdf
+*.snf
+*.fon
+*.fnt
+*.ttc
+*.pfr
+*.afm
+*.acr
+*.acfm
+*.afm
+*.pfb
+*.pfm
+*.mmm
+*.mmm
+*.fot
+*.gf
+*.pk
+*.vf
+*.tfm
+*.ofm
+*.ocp
+*.ofp
+*.tdx
+*.gxf
+*.ufm
+*.ufm
+*.pt1
+*.pfa
+*.gsf
+*.bdf
+*.snf
+*.pcf
+*.psf
+*.pnm
+*.pbm
+*.pgm
+*.ppm
+*.pnm
+*.pam
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pfm
+*.pf......
